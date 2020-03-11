@@ -55,8 +55,6 @@ Requires:   qt5-qtdeclarative
 %description -n qt5-qtdeclarative-pim-contacts
 This package contains the PIM Contacts imports for QtDeclarative
 
-
-
 %package -n qt5-qtpim-organizer
 Summary:    Qt PIM Organizer
 Group:      System/Libraries
@@ -168,6 +166,9 @@ find %{buildroot}%{_libdir} -type f -name '*.prl' \
 -exec sed -i -e "/^QMAKE_PRL_BUILD_DIR/d;s/\(QMAKE_PRL_LIBS =\).*/\1/" {} \;
 # Remove unneeded .la files
 rm -f %{buildroot}/%{_libdir}/*.la
+#Fixup modules name
+find %{buildroot}%{_libdir}/pkgconfig -type f -name '*.pc' \
+-exec sed -i -e 's/Qt0/Qt5/' {} \;
 
 # We don't need qt5/Qt/
 rm -rf %{buildroot}/%{_includedir}/qt5/Qt
