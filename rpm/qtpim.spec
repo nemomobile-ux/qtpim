@@ -10,6 +10,9 @@ BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5XmlPatterns)
 BuildRequires:  pkgconfig(Qt5Qml)
 BuildRequires:  pkgconfig(Qt5Quick)
+%if 0%{?fedora}
+BuildRequires:  qt5-qtbase-private-devel
+%endif
 BuildRequires:  fdupes
 
 %description
@@ -208,8 +211,8 @@ rm -rf %{buildroot}/%{_includedir}/qt5/Qt
 %{_libdir}/libQt5Contacts.prl
 %{_libdir}/pkgconfig/Qt5Contacts.pc
 %{_includedir}/qt5/QtContacts/
-%{_datadir}/qt5/mkspecs/modules/qt_lib_contacts.pri
-%{_datadir}/qt5/mkspecs/modules/qt_lib_contacts_private.pri
+%{_libdir}/qt5/mkspecs/modules/qt_lib_contacts.pri
+%{_libdir}/qt5/mkspecs/modules/qt_lib_contacts_private.pri
 %{_libdir}/cmake/Qt5Contacts/
 
 %files -n qt5-qtdeclarative-pim-contacts
@@ -228,8 +231,8 @@ rm -rf %{buildroot}/%{_includedir}/qt5/Qt
 %{_libdir}/libQt5Organizer.prl
 %{_libdir}/pkgconfig/Qt5Organizer.pc
 %{_includedir}/qt5/QtOrganizer/
-%{_datadir}/qt5/mkspecs/modules/qt_lib_organizer.pri
-%{_datadir}/qt5/mkspecs/modules/qt_lib_organizer_private.pri
+%{_libdir}/qt5/mkspecs/modules/qt_lib_organizer.pri
+%{_libdir}/qt5/mkspecs/modules/qt_lib_organizer_private.pri
 %{_libdir}/cmake/Qt5Organizer/
 
 %files -n qt5-qtdeclarative-pim-organizer
@@ -249,8 +252,8 @@ rm -rf %{buildroot}/%{_includedir}/qt5/Qt
 %{_libdir}/libQt5Versit.prl
 %{_libdir}/pkgconfig/Qt5Versit.pc
 %{_includedir}/qt5/QtVersit/
-%{_datadir}/qt5/mkspecs/modules/qt_lib_versit.pri
-%{_datadir}/qt5/mkspecs/modules/qt_lib_versit_private.pri
+%{_libdir}/qt5/mkspecs/modules/qt_lib_versit.pri
+%{_libdir}/qt5/mkspecs/modules/qt_lib_versit_private.pri
 %{_libdir}/cmake/Qt5Versit/
 
 %files -n qt5-qtpim-versitorganizer
@@ -264,7 +267,7 @@ rm -rf %{buildroot}/%{_includedir}/qt5/Qt
 %{_libdir}/libQt5VersitOrganizer.prl
 %{_libdir}/pkgconfig/Qt5VersitOrganizer.pc
 %{_includedir}/qt5/QtVersitOrganizer/
-%{_datadir}/qt5/mkspecs/modules/qt_lib_versitorganizer.pri
-%{_datadir}/qt5/mkspecs/modules/qt_lib_versitorganizer_private.pri
+%{_libdir}/qt5/mkspecs/modules/qt_lib_versitorganizer.pri
+%{_libdir}/qt5/mkspecs/modules/qt_lib_versitorganizer_private.pri
 %{_libdir}/cmake/Qt5VersitOrganizer/
 
