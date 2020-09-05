@@ -176,6 +176,9 @@ find %{buildroot}%{_libdir}/pkgconfig -type f -name '*.pc' \
 # We don't need qt5/Qt/
 rm -rf %{buildroot}/%{_includedir}/qt5/Qt
 
+# Don't pacakge examples
+rm -rf %{buildroot}/%{_libdir}/qt5/examples
+
 %fdupes %{buildroot}/%{_includedir}
 
 %post -n qt5-qtpim-contacts
@@ -211,8 +214,8 @@ rm -rf %{buildroot}/%{_includedir}/qt5/Qt
 %{_libdir}/libQt5Contacts.prl
 %{_libdir}/pkgconfig/Qt5Contacts.pc
 %{_includedir}/qt5/QtContacts/
-%{_libdir}/qt5/mkspecs/modules/qt_lib_contacts.pri
-%{_libdir}/qt5/mkspecs/modules/qt_lib_contacts_private.pri
+#%{_libdir}/qt5/mkspecs/modules/qt_lib_contacts.pri
+#%{_libdir}/qt5/mkspecs/modules/qt_lib_contacts_private.pri
 %{_libdir}/cmake/Qt5Contacts/
 
 %files -n qt5-qtdeclarative-pim-contacts
